@@ -1,0 +1,78 @@
+---
+const skills = [
+	{ name: 'React', category: 'Frontend' },
+	{ name: 'JavaScript', category: 'Frontend' },
+	{ name: 'HTML', category: 'Frontend' },
+	{ name: 'CSS / Sass', category: 'Frontend' },
+	{ name: 'Java', category: 'Backend' },
+	{ name: 'Jenkins', category: 'DevOps' },
+	{ name: 'Docker', category: 'DevOps' },
+	{ name: 'Kubernetes (K8S)', category: 'DevOps' },
+	{ name: 'Cube', category: 'Other' }
+];
+---
+<section id="skills">
+	<h2>Dovednosti</h2>
+	<div class="skills-grid">
+		{skills.map(skill => (
+			<div class="skill-card">
+				<span class="category">{skill.category}</span>
+				<h3>{skill.name}</h3>
+			</div>
+		))}
+	</div>
+</section>
+
+<style>
+	#skills {
+		background-color: var(--light-blue);
+	}
+
+	h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		margin-bottom: 3rem;
+	}
+
+	h2::after {
+		content: '';
+		display: block;
+		width: 50px;
+		height: 4px;
+		background-color: var(--primary-blue);
+		margin: 0.5rem auto 0;
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.skill-card {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 10px;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+		text-align: center;
+		transition: transform 0.3s ease;
+	}
+
+	.skill-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.category {
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		color: var(--primary-blue);
+		font-weight: bold;
+		letter-spacing: 1px;
+	}
+
+	.skill-card h3 {
+		margin-top: 0.5rem;
+		font-size: 1.2rem;
+		margin-bottom: 0;
+	}
+</style>

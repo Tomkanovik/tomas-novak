@@ -1,0 +1,92 @@
+---
+const projects = [
+	{
+		title: 'Japanspecialist.com',
+		description: 'Vývoj a správa portálu pro specialisty na cestování do Japonska. Implementace frontendových komponent a integrace s backendovými službami.',
+		tags: ['React', 'Java', 'Infrastructure'],
+		link: '#'
+	}
+];
+---
+<section id="projects">
+	<h2>Projekty</h2>
+	<div class="projects-container">
+		{projects.map(project => (
+			<div class="project-card">
+				<div class="project-info">
+					<h3>{project.title}</h3>
+					<p>{project.description}</p>
+					<div class="tags">
+						{project.tags.map(tag => <span class="tag">{tag}</span>)}
+					</div>
+					<a href={project.link} class="project-link">Zobrazit projekt &rarr;</a>
+				</div>
+			</div>
+		))}
+	</div>
+</section>
+
+<style>
+	h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		margin-bottom: 3rem;
+	}
+
+	h2::after {
+		content: '';
+		display: block;
+		width: 50px;
+		height: 4px;
+		background-color: var(--primary-blue);
+		margin: 0.5rem auto 0;
+	}
+
+	.projects-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.project-card {
+		background: white;
+		border: 1px solid #eee;
+		border-radius: 15px;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+	}
+
+	.project-info {
+		padding: 2rem;
+	}
+
+	.project-info h3 {
+		font-size: 1.8rem;
+		margin-top: 0;
+	}
+
+	.tags {
+		display: flex;
+		gap: 0.5rem;
+		margin-bottom: 1.5rem;
+		flex-wrap: wrap;
+	}
+
+	.tag {
+		background-color: var(--light-blue);
+		color: var(--primary-blue);
+		padding: 0.2rem 0.8rem;
+		border-radius: 20px;
+		font-size: 0.9rem;
+		font-weight: bold;
+	}
+
+	.project-link {
+		font-weight: bold;
+		display: inline-block;
+	}
+</style>

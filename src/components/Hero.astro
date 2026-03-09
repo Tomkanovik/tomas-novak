@@ -1,0 +1,82 @@
+---
+---
+<section id="hero">
+	<div class="hero-content">
+		<h1>Tomáš Novák</h1>
+		<p class="subtitle">Web Developer | REACT, JAVA & Infrastructure</p>
+		<p class="experience">5 let zkušeností s vývojem moderních aplikací</p>
+		<div class="cta">
+			<a href="#contact" class="button">Kontaktujte mě</a>
+			<a href="#projects" class="button secondary">Moje práce</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	#hero {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 80vh;
+		text-align: center;
+		background: linear-gradient(135deg, var(--light-blue) 0%, #ffffff 100%);
+	}
+
+	h1 {
+		font-size: 3.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.subtitle {
+		font-size: 1.5rem;
+		color: var(--primary-blue);
+		font-weight: 700;
+		margin-bottom: 1rem;
+	}
+
+	.experience {
+		font-size: 1.1rem;
+		color: #666;
+		margin-bottom: 2rem;
+	}
+
+	.cta {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+	}
+
+	.button {
+		padding: 0.8rem 2rem;
+		background-color: var(--primary-blue);
+		color: white;
+		border-radius: 5px;
+		font-weight: bold;
+		border: 2px solid var(--primary-blue);
+	}
+
+	.button:hover {
+		background-color: var(--dark-blue);
+		border-color: var(--dark-blue);
+		color: white;
+	}
+
+	.button.secondary {
+		background-color: transparent;
+		color: var(--primary-blue);
+	}
+
+	.button.secondary:hover {
+		background-color: var(--primary-blue);
+		color: white;
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 2.5rem;
+		}
+		.subtitle {
+			font-size: 1.2rem;
+		}
+	}
+</style>

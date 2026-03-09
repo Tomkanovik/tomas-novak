@@ -1,0 +1,124 @@
+---
+---
+<section id="contact">
+	<h2>Kontakt</h2>
+	<div class="contact-wrapper">
+		<div class="contact-info">
+			<h3>Pojďme spolupracovat</h3>
+			<p>Hledáte zkušeného vývojáře pro svůj projekt? Neváhejte mě kontaktovat.</p>
+			<ul class="contact-links">
+				<li><strong>Email:</strong> <a href="mailto:tomas.novak@example.com">tomas.novak@example.com</a></li>
+				<li><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/tomasnovak</a></li>
+				<li><strong>GitHub:</strong> <a href="#">github.com/tomasnovak</a></li>
+			</ul>
+		</div>
+		<form class="contact-form" onsubmit="return false;">
+			<div class="form-group">
+				<label for="name">Jméno</label>
+				<input type="text" id="name" placeholder="Vaše jméno" />
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" id="email" placeholder="Váš email" />
+			</div>
+			<div class="form-group">
+				<label for="message">Zpráva</label>
+				<textarea id="message" rows="4" placeholder="Vaše zpráva"></textarea>
+			</div>
+			<button type="submit" class="submit-button">Odeslat zprávu</button>
+		</form>
+	</div>
+</section>
+
+<style>
+	#contact {
+		background-color: var(--light-blue);
+	}
+
+	h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		margin-bottom: 3rem;
+	}
+
+	h2::after {
+		content: '';
+		display: block;
+		width: 50px;
+		height: 4px;
+		background-color: var(--primary-blue);
+		margin: 0.5rem auto 0;
+	}
+
+	.contact-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: start;
+	}
+
+	.contact-info h3 {
+		font-size: 1.8rem;
+		margin-top: 0;
+	}
+
+	.contact-links {
+		list-style: none;
+		padding: 0;
+		margin-top: 2rem;
+	}
+
+	.contact-links li {
+		margin-bottom: 1rem;
+		font-size: 1.1rem;
+	}
+
+	.contact-form {
+		background: white;
+		padding: 2rem;
+		border-radius: 15px;
+		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+	}
+
+	.form-group {
+		margin-bottom: 1.5rem;
+	}
+
+	.form-group label {
+		display: block;
+		margin-bottom: 0.5rem;
+		font-weight: bold;
+	}
+
+	.form-group input,
+	.form-group textarea {
+		width: 100%;
+		padding: 0.8rem;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		font-family: inherit;
+	}
+
+	.submit-button {
+		width: 100%;
+		padding: 1rem;
+		background-color: var(--primary-blue);
+		color: white;
+		border: none;
+		border-radius: 5px;
+		font-weight: bold;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+
+	.submit-button:hover {
+		background-color: var(--dark-blue);
+	}
+
+	@media (max-width: 768px) {
+		.contact-wrapper {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+	}
+</style>
