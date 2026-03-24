@@ -1,7 +1,4 @@
-@import "tailwindcss";
-
-@import "global";
-@import "composition/layout";
-@import "blocks/button";
-@import "blocks/code-window";
-@import "blocks/project-card";
+@use "./composition/layout";
+@use "./blocks/button";
+@use "./blocks/code-window";
+@use "./blocks/project-card";
