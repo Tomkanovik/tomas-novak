@@ -1,0 +1,37 @@
+---
+---
+<section class="wrapper py-32 border-t border-slate-100" id="about">
+  <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <div class="flow" style="--flow-space: 2rem;">
+      <h2 class="text-4xl font-bold tracking-tight text-slate-900">O mně</h2>
+      <div class="prose prose-slate lg:prose-lg text-slate-500 flow">
+        <p>
+          Jsem zapálený full-stack vývojář s více než 5 lety zkušeností s vytvářením moderních webových aplikací. Mým cílem je dodávat čistý, efektivní a škálovatelný kód, který řeší reálné problémy.
+        </p>
+        <p>
+          Specializuji se na ekosystém JavaScriptu, zejména na React a Node.js, ale neustále se učím nové technologie, abych mohl nabízet ta nejlepší řešení. Věřím, že dobrý software by měl být nejen funkční, ale i uživatelsky přívětivý a přístupný pro každého.
+        </p>
+      </div>
+    </div>
+    <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 shadow-inner">
+      <h3 class="text-xl font-bold text-slate-900 mb-6">Můj proces</h3>
+      <ul class="flow" style="--flow-space: 1rem;">
+        {[
+          { title: "Plánování", desc: "Důkladná analýza požadavků a návrh architektury." },
+          { title: "Vývoj", desc: "Psaní čistého a otestovaného kódu s důrazem na výkon." },
+          { title: "Nasazení", desc: "Zajištění hladkého běhu aplikace v produkčním prostředí." }
+        ].map(step => (
+          <li class="flex gap-4">
+            <div class="size-6 bg-primary text-white flex items-center justify-center rounded-full flex-shrink-0 text-xs font-bold">
+              <span class="material-symbols-outlined text-sm">check</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800">{step.title}</h4>
+              <p class="text-sm text-slate-500">{step.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

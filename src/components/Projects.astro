@@ -1,0 +1,55 @@
+---
+const projects = [
+  {
+    title: "QuantumAnalytics",
+    description: "Vysokofrekvenční obchodní dashboard vytvořený pro vizualizaci dat v podnikovém měřítku.",
+    tags: ["React", "D3.js", "WebSockets"],
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAN_eAjExoiTHoS2Ylv5TLYfFmNW-g29LOs7PWsGTuzgJUh1YDYZjkW2c6MqpoPA8spUgYq4P73JaJlmlx2Mz5Yw8JEA5LY4XMGccfkRfsJfc5SgBtO3HGICOKqddoVjlDTtxS_QzHVUzIuELID7evfW0-js2xJMSQsEvW3YmhHYTAYO8bUJU9obgZ-4ZagiCHWgCJAXcWzWaBR5nb034hESwltOiCL_cv5HQnCOg9iHyRiYNemGuKtNE-PvQTaOUTEcZEcZT02ZuQ",
+    link: "#"
+  },
+  {
+    title: "VelocityCMS",
+    description: "Bezhlavý systém pro správu obsahu optimalizovaný pro generování statických stránek.",
+    tags: ["Next.js", "GraphQL", "Prisma"],
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC7Rba_NCy02aVuaXpz1RFvENp7M8QnHcb4ScpgseYhUylbluxBy442NUZ_fMAeXUCMZZI4uxBdIimwXSFWeC6pDhtdVVh58Sw9IhJxixXKhkO_R-F8WonaGUyjALiBUUx9OnuUQfRg7c5pbj_Jl_vn4yEb5zTH6SWZfiL9fatbtTplgzmvehUNC3H1nFdaMRb-Y37NE5yvJ39B3P0PH27idS5bNhOR5uJ-33_gu0AJRMU66FjcOO5Le6gsD2TxAPrT_mVo8RoIv1Q",
+    link: "#"
+  }
+];
+---
+<section class="wrapper py-32" id="projects">
+  <div class="repel items-end mb-16">
+    <div>
+      <h2 class="text-4xl font-bold tracking-tight text-slate-900 mb-4">Vybrané projekty</h2>
+      <div class="h-1 w-20 bg-primary"></div>
+    </div>
+    <a class="text-primary font-bold text-sm flex items-center gap-2 hover:underline" href="#">
+      Zobrazit všechny projekty <span class="material-symbols-outlined text-sm">arrow_forward</span>
+    </a>
+  </div>
+  <div class="grid md:grid-cols-2 gap-12">
+    {projects.map((project) => (
+      <div class="project-card">
+        <div class="project-card__image-container">
+          <img src={project.image} alt={project.title} class="project-card__image" />
+        </div>
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="project-card__title">{project.title}</h3>
+            <p class="project-card__description">{project.description}</p>
+            <div class="project-card__tags">
+              {project.tags.map((tag, index) => (
+                <>
+                  <span>{tag}</span>
+                  {index < project.tags.length - 1 && <span>•</span>}
+                </>
+              ))}
+            </div>
+          </div>
+          <button class="size-10 flex flex-shrink-0 items-center justify-center border border-slate-200 rounded hover:bg-primary hover:text-white hover:border-primary transition-all">
+            <span class="material-symbols-outlined text-lg">open_in_new</span>
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
