@@ -1,8 +1,8 @@
 ---
 ---
-<section class="max-w-6xl mx-auto px-6 pt-24 pb-32">
+<section class="wrapper pt-24 pb-32">
   <div class="flex flex-col lg:flex-row items-center gap-16">
-    <div class="flex-1 space-y-8">
+    <div class="flex-1 flow" style="--flow-space: 2rem;">
       <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight text-slate-900">
         Vytvářím vysoce výkonné <span class="text-primary">webové zážitky</span> s precizností.
       </h1>
@@ -10,19 +10,19 @@
         Full-stack vývojář specializující se na minimalistickou architekturu a robustní inženýrství. Zaměřen na výkon, přístupnost a čistý kód.
       </p>
       <div class="flex items-center gap-6 pt-4">
-        <a href="#projects" class="bg-primary text-white font-bold py-3 px-8 rounded shadow-lg shadow-primary/20">
+        <a href="#projects" class="btn btn-primary btn-md shadow-lg shadow-primary/20">
           Zobrazit projekty
         </a>
-        <a href="/resume.pdf" class="border border-slate-200 text-slate-600 font-bold py-3 px-8 rounded hover:bg-slate-50 transition-colors">
+        <a href="/resume.pdf" class="btn btn-outline btn-md">
           Přečíst si životopis
         </a>
       </div>
     </div>
     <!-- Code Window Graphic -->
-    <div class="flex-1 w-full max-w-xl">
-      <div class="bg-white thin-border border-slate-200 shadow-2xl rounded-lg overflow-hidden">
-        <div class="bg-slate-50 border-b border-slate-200 pl-4 pr-1 py-0 flex items-center justify-between">
-          <div class="text-[10px] text-slate-400 font-mono">portfolio.ts — Visual Studio Code</div>
+    <div class="flex-1 w-full flex justify-center lg:justify-end">
+      <div class="code-window">
+        <div class="code-window__header">
+          <div class="code-window__title">portfolio.ts — Visual Studio Code</div>
           <div class="flex items-center">
             <button class="px-2 py-1 hover:bg-slate-200 transition-colors text-slate-400">
               <span class="material-symbols-outlined text-sm">remove</span>
@@ -35,37 +35,37 @@
             </button>
           </div>
         </div>
-        <div class="p-6 font-mono text-sm leading-relaxed">
-          <div class="flex gap-4">
-            <span class="text-slate-300">01</span>
+        <div class="code-window__content">
+          <div class="code-line">
+            <span class="code-line__number">01</span>
             <span><span class="text-primary">import</span> &#123; Developer &#125; <span class="text-primary">from</span> <span class="text-emerald-600">'@core/types'</span>;</span>
           </div>
-          <div class="flex gap-4">
-            <span class="text-slate-300">02</span>
+          <div class="code-line">
+            <span class="code-line__number">02</span>
             <span>&nbsp;</span>
           </div>
-          <div class="flex gap-4">
-            <span class="text-slate-300">03</span>
+          <div class="code-line">
+            <span class="code-line__number">03</span>
             <span><span class="text-primary">const</span> portfolio: <span class="text-amber-500">Developer</span> = &#123;</span>
           </div>
-          <div class="flex gap-4">
-            <span class="text-slate-300">04</span>
+          <div class="code-line">
+            <span class="code-line__number">04</span>
             <span>&nbsp;&nbsp;name: <span class="text-emerald-600">'Tomáš Novák'</span>,</span>
           </div>
-          <div class="flex gap-4">
-            <span class="text-slate-300">05</span>
+          <div class="code-line">
+            <span class="code-line__number">05</span>
             <span>&nbsp;&nbsp;focus: [<span class="text-emerald-600">'Performance'</span>, <span class="text-emerald-600">'UI'</span>],</span>
           </div>
-          <div class="flex gap-4">
-            <span class="text-slate-300">06</span>
+          <div class="code-line">
+            <span class="code-line__number">06</span>
             <span>&nbsp;&nbsp;available: <span class="text-primary">true</span></span>
           </div>
-          <div class="flex gap-4">
-            <span class="text-slate-300">07</span>
+          <div class="code-line">
+            <span class="code-line__number">07</span>
             <span>&#125;;</span>
           </div>
-          <div class="flex gap-4 mt-4">
-            <span class="text-slate-300">08</span>
+          <div class="code-line mt-4">
+            <span class="code-line__number">08</span>
             <span class="inline-block w-2 h-5 bg-primary/40"></span>
           </div>
         </div>

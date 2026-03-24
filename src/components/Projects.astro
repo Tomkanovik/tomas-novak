@@ -16,8 +16,8 @@ const projects = [
   }
 ];
 ---
-<section class="max-w-6xl mx-auto px-6 py-32" id="projects">
-  <div class="flex justify-between items-end mb-16">
+<section class="wrapper py-32" id="projects">
+  <div class="repel items-end mb-16">
     <div>
       <h2 class="text-4xl font-bold tracking-tight text-slate-900 mb-4">Vybrané projekty</h2>
       <div class="h-1 w-20 bg-primary"></div>
@@ -28,15 +28,15 @@ const projects = [
   </div>
   <div class="grid md:grid-cols-2 gap-12">
     {projects.map((project) => (
-      <div class="group">
-        <div class="aspect-video bg-slate-100 overflow-hidden rounded mb-6 thin-border border-slate-200">
-          <img src={project.image} alt={project.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+      <div class="project-card">
+        <div class="project-card__image-container">
+          <img src={project.image} alt={project.title} class="project-card__image" />
         </div>
         <div class="flex justify-between items-start">
           <div>
-            <h3 class="text-2xl font-bold text-slate-900 group-hover:text-primary transition-colors">{project.title}</h3>
-            <p class="text-slate-500 mt-2 mb-4 leading-relaxed">{project.description}</p>
-            <div class="flex gap-4 text-[11px] font-bold text-slate-400 tracking-wider uppercase">
+            <h3 class="project-card__title">{project.title}</h3>
+            <p class="project-card__description">{project.description}</p>
+            <div class="project-card__tags">
               {project.tags.map((tag, index) => (
                 <>
                   <span>{tag}</span>
@@ -45,7 +45,7 @@ const projects = [
               ))}
             </div>
           </div>
-          <button class="size-10 flex flex-shrink-0 items-center justify-center border border-slate-200 rounded group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
+          <button class="size-10 flex flex-shrink-0 items-center justify-center border border-slate-200 rounded hover:bg-primary hover:text-white hover:border-primary transition-all">
             <span class="material-symbols-outlined text-lg">open_in_new</span>
           </button>
         </div>
