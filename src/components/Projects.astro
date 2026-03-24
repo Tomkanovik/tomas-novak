@@ -26,28 +26,25 @@ const projects = [
       Zobrazit všechny projekty <span class="material-symbols-outlined text-sm">arrow_forward</span>
     </a>
   </div>
-  <div class="grid md:grid-cols-2 gap-12">
+  <div class="grid md:grid-cols-2 gap-16">
     {projects.map((project) => (
-      <div class="project-card">
+      <div class="project-card group">
         <div class="project-card__image-container">
           <img src={project.image} alt={project.title} class="project-card__image" />
         </div>
-        <div class="flex justify-between items-start">
-          <div>
+        <div class="project-card__content">
+          <div class="flex justify-between items-start mb-4">
             <h3 class="project-card__title">{project.title}</h3>
-            <p class="project-card__description">{project.description}</p>
-            <div class="project-card__tags">
-              {project.tags.map((tag, index) => (
-                <>
-                  <span>{tag}</span>
-                  {index < project.tags.length - 1 && <span>•</span>}
-                </>
-              ))}
+            <div class="size-12 flex flex-shrink-0 items-center justify-center border border-slate-200 rounded-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
+              <span class="material-symbols-outlined text-xl">open_in_new</span>
             </div>
           </div>
-          <button class="size-10 flex flex-shrink-0 items-center justify-center border border-slate-200 rounded hover:bg-primary hover:text-white hover:border-primary transition-all">
-            <span class="material-symbols-outlined text-lg">open_in_new</span>
-          </button>
+          <p class="project-card__description">{project.description}</p>
+          <div class="project-card__tags">
+            {project.tags.map((tag) => (
+              <span>{tag}</span>
+            ))}
+          </div>
         </div>
       </div>
     ))}
