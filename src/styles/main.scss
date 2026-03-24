@@ -1,6 +1,5 @@
-@import "tailwindcss";
-@import "./_base.scss";
-@import "./composition/_layout.scss";
-@import "./blocks/_button.scss";
-@import "./blocks/_code-window.scss";
-@import "./blocks/_project-card.scss";
+@use "./base";
+@use "./composition/layout";
+@use "./blocks/button";
+@use "./blocks/code-window";
+@use "./blocks/project-card";
