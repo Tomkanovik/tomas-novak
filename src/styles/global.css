@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
-@import "./composition/layout.css";
-@import "./blocks/button.css";
-@import "./blocks/code-window.css";
-@import "./blocks/project-card.css";
+@import "./composition/_layout.scss";
+@import "./blocks/_button.scss";
+@import "./blocks/_code-window.scss";
+@import "./blocks/_project-card.scss";
 
 @theme {
   --color-primary: #0056b3;
