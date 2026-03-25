@@ -1,0 +1,16 @@
+yarn run v1.22.22
+warning package.json: No license field
+$ astro dev
+10:50:57 [types] Generated 1ms
+10:50:57 [content] Syncing content
+10:50:57 [content] Synced content
+10:50:57 [vite] Port 4321 is in use, trying another one...
+10:50:57 [vite] Port 4322 is in use, trying another one...
+10:50:57 [vite] Port 4323 is in use, trying another one...
+
+ astro  v5.18.1 ready in 568 ms
+
+┃ Local    http://localhost:4324/
+┃ Network  use --host to expose
+
+10:50:57 watching for file changes...
