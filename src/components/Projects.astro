@@ -1,18 +1,29 @@
 ---
+import petakImg from '../assets/petakphotography.png';
+import flytimeImg from '../assets/flytime.png';
+import printfullyImg from '../assets/printfully3d.png';
+
 const projects = [
   {
-    title: "QuantumAnalytics",
-    description: "Vysokofrekvenční obchodní dashboard vytvořený pro vizualizaci dat v podnikovém měřítku.",
-    tags: ["React", "D3.js", "WebSockets"],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAN_eAjExoiTHoS2Ylv5TLYfFmNW-g29LOs7PWsGTuzgJUh1YDYZjkW2c6MqpoPA8spUgYq4P73JaJlmlx2Mz5Yw8JEA5LY4XMGccfkRfsJfc5SgBtO3HGICOKqddoVjlDTtxS_QzHVUzIuELID7evfW0-js2xJMSQsEvW3YmhHYTAYO8bUJU9obgZ-4ZagiCHWgCJAXcWzWaBR5nb034hESwltOiCL_cv5HQnCOg9iHyRiYNemGuKtNE-PvQTaOUTEcZEcZT02ZuQ",
-    link: "#"
+    title: "Petak Photography",
+    description: "Elegantní portfolio pro profesionálního fotografa s důrazem na vizuální prezentaci a rychlost.",
+    tags: ["Photography", "Portfolio", "Web Design"],
+    image: petakImg.src,
+    link: "https://www.petakphotography.cz/"
   },
   {
-    title: "VelocityCMS",
-    description: "Bezhlavý systém pro správu obsahu optimalizovaný pro generování statických stránek.",
-    tags: ["Next.js", "GraphQL", "Prisma"],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC7Rba_NCy02aVuaXpz1RFvENp7M8QnHcb4ScpgseYhUylbluxBy442NUZ_fMAeXUCMZZI4uxBdIimwXSFWeC6pDhtdVVh58Sw9IhJxixXKhkO_R-F8WonaGUyjALiBUUx9OnuUQfRg7c5pbj_Jl_vn4yEb5zTH6SWZfiL9fatbtTplgzmvehUNC3H1nFdaMRb-Y37NE5yvJ39B3P0PH27idS5bNhOR5uJ-33_gu0AJRMU66FjcOO5Le6gsD2TxAPrT_mVo8RoIv1Q",
-    link: "#"
+    title: "FlyTime",
+    description: "E-shop s komponenty pro FPV drony a závodění.",
+    tags: ["E-commerce", "FPV", "Drones"],
+    image: flytimeImg.src,
+    link: "https://www.flytime.cz/"
+  },
+  {
+    title: "Printfully3D",
+    description: "E-shop a platforma pro prodej RC modelů pro 3D tiskárny.",
+    tags: ["E-commerce", "RC Models", "3D Printing"],
+    image: printfullyImg.src,
+    link: "https://www.printfully3d.com/"
   }
 ];
 ---
@@ -22,13 +33,10 @@ const projects = [
       <h2 class="text-4xl font-bold tracking-tight text-slate-900 mb-4">Vybrané projekty</h2>
       <div class="h-1 w-20 bg-primary"></div>
     </div>
-    <a class="text-primary font-bold text-sm flex items-center gap-2 hover:underline" href="#">
-      Zobrazit všechny projekty <span class="material-symbols-outlined text-sm">arrow_forward</span>
-    </a>
   </div>
-  <div class="grid md:grid-cols-2 gap-16">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
     {projects.map((project) => (
-      <div class="project-card group">
+      <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-card group block">
         <div class="project-card__image-container">
           <img src={project.image} alt={project.title} class="project-card__image" />
         </div>
@@ -46,7 +54,7 @@ const projects = [
             ))}
           </div>
         </div>
-      </div>
+      </a>
     ))}
   </div>
 </section>
