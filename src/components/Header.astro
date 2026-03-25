@@ -8,6 +8,8 @@
       </div>
       <span class="font-bold tracking-tight text-lg">Tomáš Novák</span>
     </div>
+
+    <!-- Desktop Menu -->
     <div class="hidden md:flex items-center gap-10">
       <a class="text-sm font-medium hover:text-primary transition-colors" href="#projects">Projekty</a>
       <a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">Dovednosti</a>
@@ -16,5 +18,113 @@
         Kontaktujte mě
       </a>
     </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button
+      id="menu-toggle"
+      class="md:hidden group flex items-center justify-center p-2 text-slate-600 hover:text-primary transition-colors focus:outline-none relative"
+      aria-label="Otevřít menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <div class="flex flex-col gap-1.5 w-6">
+        <span id="line-1" class="h-0.5 w-full bg-current rounded-full transition-all duration-300 origin-center"></span>
+        <span id="line-2" class="h-0.5 w-full bg-current rounded-full transition-all duration-300"></span>
+        <span id="line-3" class="h-0.5 w-full bg-current rounded-full transition-all duration-300 origin-center"></span>
+      </div>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-50 bg-white/95 backdrop-blur-xl translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] md:hidden flex flex-col items-center justify-center p-6"
+>
+  <button
+    id="menu-close"
+    class="absolute top-6 right-6 p-2 text-slate-600 hover:text-primary transition-colors focus:outline-none"
+    aria-label="Zavřít menu"
+  >
+    <span class="material-symbols-outlined text-4xl">close</span>
+  </button>
+
+  <div class="flex flex-col items-center gap-10 text-center">
+    <div class="space-y-6 flex flex-col">
+      <a class="mobile-nav-link text-3xl font-bold hover:text-primary transition-colors translate-y-4 opacity-0 transition-all duration-500 delay-100" href="#projects">Projekty</a>
+      <a class="mobile-nav-link text-3xl font-bold hover:text-primary transition-colors translate-y-4 opacity-0 transition-all duration-500 delay-200" href="#skills">Dovednosti</a>
+      <a class="mobile-nav-link text-3xl font-bold hover:text-primary transition-colors translate-y-4 opacity-0 transition-all duration-500 delay-300" href="#about">O mně</a>
+    </div>
+    <div class="translate-y-4 opacity-0 transition-all duration-500 delay-400" id="mobile-menu-cta">
+      <a href="mailto:tomas@novak.cz" class="btn btn-primary btn-lg px-10">
+        Kontaktujte mě
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const body = document.body;
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+  const menuCta = document.getElementById('mobile-menu-cta');
+
+  const line1 = document.getElementById('line-1');
+  const line2 = document.getElementById('line-2');
+  const line3 = document.getElementById('line-3');
+
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    if (!mobileMenu) return;
+    isMenuOpen = !isMenuOpen;
+
+    menuToggle?.setAttribute('aria-expanded', isMenuOpen.toString());
+
+    if (isMenuOpen) {
+      mobileMenu?.classList.remove('translate-x-full');
+      body.style.overflow = 'hidden';
+
+      // Animate hamburger to X
+      line1?.classList.add('rotate-45', 'translate-y-[8px]');
+      line2?.classList.add('opacity-0');
+      line3?.classList.add('-rotate-45', '-translate-y-[8px]');
+
+      // Animate links in
+      navLinks.forEach(link => {
+        link.classList.remove('translate-y-4', 'opacity-0');
+      });
+      menuCta?.classList.remove('translate-y-4', 'opacity-0');
+    } else {
+      mobileMenu?.classList.add('translate-x-full');
+      body.style.overflow = '';
+
+      // Animate X back to hamburger
+      line1?.classList.remove('rotate-45', 'translate-y-[8px]');
+      line2?.classList.remove('opacity-0');
+      line3?.classList.remove('-rotate-45', '-translate-y-[8px]');
+
+      // Reset animations
+      navLinks.forEach(link => {
+        link.classList.add('translate-y-4', 'opacity-0');
+      });
+      menuCta?.classList.add('translate-y-4', 'opacity-0');
+    }
+  }
+
+  menuToggle?.addEventListener('click', toggleMenu);
+  menuClose?.addEventListener('click', toggleMenu);
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      // Small delay to allow seeing the click before closing
+      setTimeout(toggleMenu, 300);
+    });
+  });
+
+  menuCta?.addEventListener('click', () => {
+    setTimeout(toggleMenu, 300);
+  });
+</script>
