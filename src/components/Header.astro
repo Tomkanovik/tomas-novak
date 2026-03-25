@@ -22,7 +22,7 @@
     <!-- Mobile Menu Toggle -->
     <button
       id="menu-toggle"
-      class="md:hidden group flex items-center justify-center p-2 text-slate-600 hover:text-primary transition-colors focus:outline-none relative z-[60]"
+      class="md:hidden group flex items-center justify-center p-2 text-slate-600 hover:text-primary transition-colors focus:outline-none relative"
       aria-label="Otevřít menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
@@ -41,6 +41,14 @@
   id="mobile-menu"
   class="fixed inset-0 z-50 bg-white/95 backdrop-blur-xl translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] md:hidden flex flex-col items-center justify-center p-6"
 >
+  <button
+    id="menu-close"
+    class="absolute top-6 right-6 p-2 text-slate-600 hover:text-primary transition-colors focus:outline-none"
+    aria-label="Zavřít menu"
+  >
+    <span class="material-symbols-outlined text-4xl">close</span>
+  </button>
+
   <div class="flex flex-col items-center gap-10 text-center">
     <div class="space-y-6 flex flex-col">
       <a class="mobile-nav-link text-3xl font-bold hover:text-primary transition-colors translate-y-4 opacity-0 transition-all duration-500 delay-100" href="#projects">Projekty</a>
@@ -57,6 +65,7 @@
 
 <script>
   const menuToggle = document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close');
   const mobileMenu = document.getElementById('mobile-menu');
   const body = document.body;
   const navLinks = document.querySelectorAll('.mobile-nav-link');
@@ -106,6 +115,7 @@
   }
 
   menuToggle?.addEventListener('click', toggleMenu);
+  menuClose?.addEventListener('click', toggleMenu);
 
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
