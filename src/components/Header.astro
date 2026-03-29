@@ -1,20 +1,24 @@
 ---
+import Logo from './Logo.astro';
 ---
 <nav class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-slate-100/50">
   <div class="wrapper repel h-20">
-    <div class="flex items-center gap-2">
-      <div class="size-6 bg-primary flex items-center justify-center rounded">
-        <span class="material-symbols-outlined text-white text-sm">terminal</span>
-      </div>
-      <span class="font-bold tracking-tight text-lg">Tomáš Novák</span>
-    </div>
-    <div class="hidden md:flex items-center gap-10">
+    <a href="/" class="flex items-center gap-2">
+      <Logo size="sm" />
+    </a>
+    <div class="hidden md:flex items-center gap-8">
       <a class="text-sm font-medium hover:text-primary transition-colors" href="#projects">Projekty</a>
       <a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">Dovednosti</a>
       <a class="text-sm font-medium hover:text-primary transition-colors" href="#about">O mně</a>
-      <a href="mailto:tomas@novak.cz" class="btn btn-primary btn-sm">
-        Kontaktujte mě
-      </a>
+      <div class="flex items-center gap-4 ml-2">
+        <a href="tel:+420722605230" class="text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-lg">call</span>
+          +420 722 605 230
+        </a>
+        <a href="mailto:info@tnovak.eu" class="btn btn-primary btn-sm">
+          Kontaktujte mě
+        </a>
+      </div>
     </div>
   </div>
 </nav>
