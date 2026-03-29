@@ -1,0 +1,41 @@
+---
+interface Props {
+  class?: string;
+  showText?: boolean;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { class: className, showText = true, size = 'md' } = Astro.props;
+
+const iconSizes = {
+  sm: 'size-7',
+  md: 'size-9',
+  lg: 'size-12'
+};
+
+const textSizes = {
+  sm: 'text-lg',
+  md: 'text-xl',
+  lg: 'text-2xl'
+};
+
+const svgSizes = {
+  sm: 'size-4',
+  md: 'size-5',
+  lg: 'size-7'
+};
+---
+<div class:list={["flex items-center gap-3 group", className]}>
+  <div class:list={["relative flex items-center justify-center transition-transform duration-300 group-hover:scale-110", iconSizes[size]]}>
+    <div class="absolute inset-0 bg-primary rounded-xl rotate-6 opacity-20 group-hover:rotate-12 transition-transform"></div>
+    <div class="absolute inset-0 bg-primary rounded-lg -rotate-3 group-hover:rotate-0 transition-transform shadow-lg shadow-primary/20"></div>
+    <svg viewBox="0 0 24 24" class:list={["relative text-white fill-current", svgSizes[size]]} xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 5h8v2H8v12H6V7H3V5zm10 0h2.5l3 7.5V5h2v14h-2.5L15 11.5V19h-2V5z"/>
+    </svg>
+  </div>
+  {showText && (
+    <span class:list={["font-bold tracking-tight text-slate-900", textSizes[size]]}>
+      Tomáš <span class="text-primary">Novák</span>
+    </span>
+  )}
+</div>
