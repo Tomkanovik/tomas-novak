@@ -1,0 +1,23 @@
+yarn run v1.22.22
+warning package.json: No license field
+$ astro dev
+▶ Astro collects anonymous usage data.
+  This information helps us improve Astro.
+  Run "astro telemetry disable" to opt-out.
+  https://astro.build/telemetry
+
+09:07:43 [types] Generated 1ms
+09:07:43 [content] Syncing content
+09:07:43 [content] Synced content
+
+ astro  v5.18.1 ready in 408 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+09:07:43 watching for file changes...
+
+ update  ▶ New version of Astro available: 6.1.6
+  Run npx @astrojs/upgrade to update
+
+09:08:38 [200] / 73ms
